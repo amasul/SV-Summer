@@ -1,0 +1,25 @@
+<ion-card class="custom-card card-background">
+    <img src="https://ionicframework.com/docs/img/demos/card-media.png" />
+
+    <ion-card-header style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <ion-card-title class="title">The Ceiling of a Building</ion-card-title>
+        <ion-card-subtitle class="artist-name">by Riza-yi 'Abbasi</ion-card-subtitle>
+      </div>
+      <div class="likes-column" (click)="toggleLike1()">
+        <ion-icon
+          [name]="isLiked1 ? 'heart' : 'heart-outline'"
+          [style.color]="isLiked1 ? 'red' : 'black'"
+          class="heart-icon">
+        </ion-icon>
+        <div class="likes-text">
+          <span class="like-number">{{ likeCount1 }}</span>
+          <span class="like-label">likes</span>
+        </div>
+      </div>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button class="details-btn" (click)="goToDetails()">More Details</ion-button>
+    </ion-card-content>
+  </ion-card>

@@ -1,0 +1,7 @@
+{
+  "name": "SV-summer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}

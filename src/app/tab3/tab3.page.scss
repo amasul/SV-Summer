@@ -1,0 +1,29 @@
+ion-content {
+    --background: #faf7f2;
+}
+
+ion-header {
+    box-shadow: none !important;
+    --border-width: 0 !important
+}
+
+ion-toolbar {
+    --background: #5c3a1e;
+    --border-width: 0;
+    box-shadow: none;
+}
+
+.header-search {
+    --background: #fce4;
+    --color: #fce4ec;
+    --border-radius: 25px;
+    width: 90%;
+    margin: 0 auto;
+    height: 40px;
+    font-size: 14px;
+    padding-inline-start: 12px;
+}
+::placeholder {
+    color: #fce4ec;
+    opacity: 1;
+}

@@ -1,0 +1,199 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <ion-title>
+      <div div class="header-container">
+        <h1 class="main-title">Virtual Display</h1>
+        <p class="museum-name-text">Metropolitan Museum of Art</p>
+
+      </div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content class="soft-background" [fullscreen]="true">
+  <ion-grid>
+    <ion-row>
+
+      <!-- Card 1 -->
+      <ion-col size="12" size-sm="4">
+  <ion-card class="custom-card card-background">
+    <img src="https://ionicframework.com/docs/img/demos/card-media.png" />
+
+    <ion-card-header style="display: flex; justify-content: space-between; align-items: flex-start;">
+      <div>
+        <ion-card-title class="title">The Ceiling of a Building</ion-card-title>
+        <ion-card-subtitle class="artist-name">by Riza-yi 'Abbasi</ion-card-subtitle>
+      </div>
+      <div class="likes-column" (click)="toggleLike1()">
+        <ion-icon
+          [name]="isLiked1 ? 'heart' : 'heart-outline'"
+          [style.color]="isLiked1 ? 'red' : 'black'"
+          class="heart-icon">
+        </ion-icon>
+        <div class="likes-text">
+          <span class="like-number">{{ likeCount1 }}</span>
+          <span class="like-label">likes</span>
+        </div>
+      </div>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button class="details-btn" (click)="goToDetails()">More Details</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-col>
+
+      <!-- Card 2 -->
+      <ion-col size="12" size-sm="4">
+        <ion-card class="custom-card card-background">
+          <img src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <div>
+    <ion-card-title class="title">Red and Blue roses in vase</ion-card-title>
+    <ion-card-subtitle class="artist-name">by Artist 2</ion-card-subtitle>
+  </div>
+
+  <div class="likes-column" (click)="toggleLike2()">
+    <ion-icon
+      [name]="isLiked2 ? 'heart' : 'heart-outline'"
+      [style.color]="isLiked2 ? 'red' : 'black'"
+      class="heart-icon">
+    </ion-icon>
+    <div class="likes-text">
+      <span class="like-number">{{ likeCount2 }}</span>
+      <span class="like-label">likes</span>
+    </div>
+  </div>
+</ion-card-header>
+
+          <ion-card-content>
+            <ion-button class="details-btn" (click)="goToDetails()">More Details</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Card 3 -->
+      <ion-col size="12" size-sm="4">
+        <ion-card class="custom-card card-background">
+          <img src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <div>
+    <ion-card-title class="title">Two People Riding Horses by Lake</ion-card-title>
+    <ion-card-subtitle class="artist-name">by Artist 3</ion-card-subtitle>
+  </div>
+
+  <div class="likes-column" (click)="toggleLike3()">
+    <ion-icon
+      [name]="isLiked3 ? 'heart' : 'heart-outline'"
+      [style.color]="isLiked3 ? 'red' : 'black'"
+      class="heart-icon">
+    </ion-icon>
+    <div class="likes-text">
+      <span class="like-number">{{ likeCount3 }}</span>
+      <span class="like-label">likes</span>
+    </div>
+  </div>
+</ion-card-header>
+
+          <ion-card-content>
+            <ion-button class="details-btn" (click)="goToDetails()">More Details</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+
+    <ion-row>
+
+      <!-- Card 4 -->
+      <ion-col size="12" size-sm="4">
+        <ion-card class="custom-card card-background">
+          <img src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <div>
+    <ion-card-title class="title">Black and White Bird</ion-card-title>
+    <ion-card-subtitle class="artist-name">by Artist 4</ion-card-subtitle>
+  </div>
+
+  <div class="likes-column" (click)="toggleLike4()">
+    <ion-icon
+      [name]="isLiked4 ? 'heart' : 'heart-outline'"
+      [style.color]="isLiked4 ? 'red' : 'black'"
+      class="heart-icon">
+    </ion-icon>
+    <div class="likes-text">
+      <span class="like-number">{{ likeCount4 }}</span>
+      <span class="like-label">likes</span>
+    </div>
+  </div>
+</ion-card-header>
+
+          <ion-card-content>
+            <ion-button class="details-btn" (click)="goToDetails()">More Details</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Card 5 -->
+      <ion-col size="12" size-sm="4">
+        <ion-card class="custom-card card-background">
+          <img src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <div>
+    <ion-card-title class="title">Brown and White Sail Ship on Sea</ion-card-title>
+    <ion-card-subtitle class="artist-name">by Artist 5</ion-card-subtitle>
+  </div>
+
+  <div class="likes-column" (click)="toggleLike5()">
+    <ion-icon
+      [name]="isLiked5 ? 'heart' : 'heart-outline'"
+      [style.color]="isLiked5 ? 'red' : 'black'"
+      class="heart-icon">
+    </ion-icon>
+    <div class="likes-text">
+      <span class="like-number">{{ likeCount5 }}</span>
+      <span class="like-label">likes</span>
+    </div>
+  </div>
+</ion-card-header>
+          <ion-card-content>
+            <ion-button class="details-btn" (click)="goToDetails()">More Details</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Card 6 -->
+      <ion-col size="12" size-sm="4">
+        <ion-card class="custom-card card-background">
+          <img src="https://ionicframework.com/docs/img/demos/card-media.png" />
+          <ion-card-header style="display: flex; justify-content: space-between; align-items: flex-start;">
+  <div>
+    <ion-card-title class="title">A Woman Sitting by a Fountain</ion-card-title>
+    <ion-card-subtitle class="artist-name">by Artist 5</ion-card-subtitle>
+  </div>
+
+  <div class="likes-column" (click)="toggleLike6()">
+    <ion-icon
+      [name]="isLiked6 ? 'heart' : 'heart-outline'"
+      [style.color]="isLiked6 ? 'red' : 'black'"
+      class="heart-icon">
+    </ion-icon>
+    <div class="likes-text">
+      <span class="like-number">{{ likeCount6 }}</span>
+      <span class="like-label">likes</span>
+    </div>
+  </div>
+</ion-card-header>
+
+          <ion-card-content>
+            <ion-button class="details-btn" (click)="goToDetails()">More Details</ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
