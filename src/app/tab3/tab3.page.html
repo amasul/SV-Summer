@@ -1,29 +1,27 @@
-<ion-header [translucent]="true">
+<ion-header translucent>
   <ion-toolbar>
-    <ion-searchbar
-      placeholder="Search..."
-      debounce="300"
-      class="header-search">
+    <ion-title>Search</ion-title>
+
+    <ion-searchbar placeholder="Search artworks"
+                   debounce="250"
+                   (ionInput)="onSearchChange($event)">
     </ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-  
-  <ion-list>
-    <ion-item *ngFor="let item of filteredItems">
+<ion-content fullscreen>
+  <ion-list *ngIf="(filteredArtworks$ | async)?.length; else nothing">
+    <ion-item *ngFor="let art of filteredArtworks$ | async">
       <ion-label>
-        <h2>{{ item.name }}</h2>
-        <p>{{ item.category }}</p>
+        <h2>{{ art.title }}</h2>
+        <p>{{ art.artist }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
-</ion-content>
 
+  <ng-template #nothing>
+    <ion-text color="medium" class="ion-padding">
+      No artworks match your search.
+    </ion-text>
+  </ng-template>
+</ion-content>

@@ -1,40 +1,39 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonCol, IonGrid, IonRow, IonCard, IonCardHeader, IonCardTitle, IonCardSubtitle, IonCardContent, IonButton, IonIcon, IonText } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
-import { LikeService } from '../services/like.service';
-import { NgFor } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
+import { map, Observable } from 'rxjs';
+import {
+  IonHeader, IonToolbar, IonTitle, IonContent,
+  IonGrid, IonRow, IonCol,          //  ← IonRow & IonCol added
+  IonCardContent, IonButton, IonIcon
+} from '@ionic/angular/standalone';
+
+
+import { ArtworkStoreService, Artwork } from '../services/mock-artworks.service';
+import { ArtworkCardComponent } from '../components/artwork-card/artwork-card.component';   // ✅ ONE dot-dot
+
 
 @Component({
   selector: 'app-tab2',
-  templateUrl: 'tab2.page.html',
-  styleUrls: ['tab2.page.scss'],
+  standalone: true,
+  templateUrl: './tab2.page.html',
+  styleUrls: ['./tab2.page.scss'],
   imports: [
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonCol,
-    IonGrid,
-    IonRow,
-    IonCard,
-    IonCardHeader,
-    IonCardTitle,
-    IonCardSubtitle,
-    IonCardContent,
-    IonButton,
-    IonIcon,
-    IonText,
-    ExploreContainerComponent,
-    NgFor
+    CommonModule, AsyncPipe,
+    IonHeader, IonToolbar, IonTitle, IonContent,
+    IonGrid, IonRow, IonCol, IonCardContent, IonButton, IonIcon,
+    ArtworkCardComponent
   ]
+
 })
+
 export class Tab2Page {
-  likedArtworks: any[] = [];
+  likedArtworks$: Observable<Artwork[]> = this.store.artworks$.pipe(
+    map(arr => arr.filter(a => a.isLiked))
+  );
 
-  constructor(private likeService: LikeService) {}
+  constructor(private store: ArtworkStoreService) { }
 
-  ionViewWillEnter() {
-    this.likedArtworks = this.likeService.getLikedArtworks();
-    console.log('Liked artworks:', this.likedArtworks); 
+  openComment(art: Artwork) {
+    console.log('comment on', art.title);
   }
 }

@@ -1,28 +1,43 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonList, IonItem, IonLabel } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { CommonModule } from '@angular/common';
+import { BehaviorSubject, combineLatest, map, Observable } from 'rxjs';
+
+import {
+  IonHeader, IonToolbar, IonTitle, IonSearchbar,
+  IonContent, IonList, IonItem, IonLabel, IonText
+} from '@ionic/angular/standalone';
+
+import { ArtworkStoreService, Artwork } from '../services/mock-artworks.service';
 
 @Component({
   selector: 'app-tab3',
-  templateUrl: 'tab3.page.html',
-  styleUrls: ['tab3.page.scss'],
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonSearchbar, IonList, IonItem, IonLabel, ExploreContainerComponent],
+  standalone: true,
+  templateUrl: './tab3.page.html',
+  styleUrls: ['./tab3.page.scss'],
+  imports: [
+    CommonModule,
+    IonHeader, IonToolbar, IonTitle, IonSearchbar,
+    IonContent, IonList, IonItem, IonLabel, IonText
+  ]
 })
 export class Tab3Page {
-  items = [
-    { name: 'The Lovers', category: 'painting' },
-    { name: 'Great Indian Fruit Bat', category: 'Animal' },
-    { name: 'A Stallion', category: 'Animal' }
-  ];
+  private readonly term$ = new BehaviorSubject<string>('');
 
-  filterredItems = [...this.items];
+  filteredArtworks$: Observable<Artwork[]> = combineLatest([
+    this.store.artworks$,
+    this.term$
+  ]).pipe(
+    map(([arts, term]) => {
+      term = term.toLowerCase().trim();
+      return term
+        ? arts.filter(a =>
+            a.title.toLowerCase().includes(term) ||
+            a.artist.toLowerCase().includes(term))
+        : arts;
+    })
+  );
 
-  constructor() {}
+  constructor(private store: ArtworkStoreService) {}
 
-  onSearchChange(event: any) {
-    const searchTerm = event.detail.value.toLowerCase();
-    this.filterredItems = this.items.filter(item =>
-      item.name.toLowerCase().includes(searchTerm)
-    );
-  }
+  onSearchChange(ev: any) { this.term$.next(ev.detail.value ?? ''); }
 }

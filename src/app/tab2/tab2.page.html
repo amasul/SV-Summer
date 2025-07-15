@@ -1,42 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Likes
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
+<ion-content fullscreen>
   <ion-grid>
-  <ion-row>
-    <ion-col size="12" size-md="6" *ngFor="let artwork of likedArtworks">
-      <ion-card>
-        <img [src]="artwork.image" alt="Artwork Image">
+    <!-- REMOVE the centring class here -->
+    <ion-row>  <!--  or  class="ion-justify-content-start" -->
 
-        <ion-card-header>
-          <ion-card-title>{{ artwork.title }}</ion-card-title>
-          <ion-card-subtitle>by {{ artwork.artist }}</ion-card-subtitle>
-        </ion-card-header>
+      <ion-col
+        *ngFor="let art of likedArtworks$ | async"
+        size="12" size-md="6" size-lg="4">
 
-        <ion-card-content>
-          <ion-text color="danger">
-            ❤️ {{ artwork.likes }} likes
-          </ion-text>
-        </ion-card-content>
+        <app-artwork-card [artwork]="art">
+          <ion-card-content footer>
+            <ion-button expand="block" color="medium"
+                        (click)="openComment(art)">
+              <ion-icon slot="start" name="chatbubble-outline"></ion-icon>
+              COMMENT
+            </ion-button>
+          </ion-card-content>
+        </app-artwork-card>
 
-        <ion-button expand="block" color="medium">
-          <ion-icon name="chatbubble-outline" slot="start"></ion-icon>
-          COMMENT
-        </ion-button>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
 </ion-content>

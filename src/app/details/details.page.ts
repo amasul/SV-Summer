@@ -10,6 +10,7 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
+
 export class DetailsPage implements OnInit {
   constructor() {}
  ngOnInit() {
