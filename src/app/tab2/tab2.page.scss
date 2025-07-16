@@ -1,14 +1,14 @@
-ion-title {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #d9c6a5;
-    font-size: 24px;
-    text-align: center;
-    width: 100%;
-}
+/* Only the Likes toolbar colour override */
 ion-toolbar {
-    --background: #5c3a1e;
-    --color: #3E4F1C;
+  --background: #5c3a1e;  /* warm brown */
 }
-ion-content {
-    --background: #faf7f2;
+ion-title {
+  font: 24px Georgia, serif;
+  color: #d9c6a5;
+  text-align: center;
+}
+ion-content { --background: #faf7f2; }
+
+:host ::ng-deep ion-row {
+  justify-content: flex-start !important;
 }

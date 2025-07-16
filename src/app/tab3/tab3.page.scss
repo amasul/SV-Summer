@@ -1,29 +1,21 @@
-ion-content {
-    --background: #faf7f2;
-}
-
-ion-header {
-    box-shadow: none !important;
-    --border-width: 0 !important
-}
+/* Search tab has its own pale background & toolbar */
+ion-content { --background: #faf7f2; }
 
 ion-toolbar {
-    --background: #5c3a1e;
-    --border-width: 0;
-    box-shadow: none;
+  --background: #5c3a1e;
+  --border-width: 0;
+  box-shadow: none;
 }
 
 .header-search {
-    --background: #fce4;
-    --color: #fce4ec;
-    --border-radius: 25px;
-    width: 90%;
-    margin: 0 auto;
-    height: 40px;
-    font-size: 14px;
-    padding-inline-start: 12px;
+  --background: #fce4ec1a;
+  --color: #fce4ec;
+  --border-radius: 25px;
+  width: 90%;
+  margin: 0 auto;
+  height: 40px;
+  font-size: 14px;
+  padding-inline-start: 12px;
 }
-::placeholder {
-    color: #fce4ec;
-    opacity: 1;
-}
+
+::placeholder { color: #fce4ec; opacity: 1; }

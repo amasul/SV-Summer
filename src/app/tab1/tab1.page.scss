@@ -1,13 +1,7 @@
-ion-header {
-    ion-toolbar{
-        --background: #5a5a2f; // زيتوني مائل لبني
-        color: white;
-
-    }
-}
+/* Only the fancy hero section & search bar live here */
 
 .header-container {
---background: #5a5a2f; // زيتوني مائل لبني
+  --background: #5a5a2f;
   color: white;
   display: flex;
   flex-direction: column;
@@ -16,191 +10,18 @@ ion-header {
   padding-top: 60px;
 }
 
-.main-title {
-  font-size: 36px;
-  font-weight: bold;
-  font-family: 'Georgia', serif;
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-}
-.museum-name-text {
-    margin-top: 0;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-}
-.sub-title {
-  font-size: 18px;
-  color: #ddd;
-}
+.main-title      { font: 36px 'Times New Roman', serif; color: #fff; }
+.museum-name-text{ font-family: Georgia, serif; margin: 0; }
+.sub-title       { font-size: 18px; color: #ddd; }
 
+/* live-search pill */
 .search-box {
-  display: flex;
-  align-items: center;
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 25px;
-  width: 80%;
-  max-width: 300px;
-  color: white;
+  display: flex; align-items: center;
+  background: rgba(255,255,255,.2);
+  padding: 8px 16px; border-radius: 25px;
+  width: 80%; max-width: 300px; color: white;
 
-  ion-icon {
-    margin-right: 8px;
-  }
-
-  input {
-    border: none;
-    outline: none;
-    background: transparent;
-    color: white;
-    width: 100%;
-  }
+  ion-icon { margin-right: 8px; }
+  input    { flex: 1; background: transparent; color: white; border: none; }
 }
 
-.found-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 16px;
-  color: white;
-
-  ion-icon {
-    font-size: 18px;
-  }
-}
-
-ion-content{
-    padding: 20px;
-}
-.soft-background {
-    --background: #fdfaf5;
-    background-color: #fdfaf5;
-}
-ion-col {
-  background-color: #135d54;
-  border: solid 1px #fff;
-  color: #fff;
-  text-align: center;
-}
-.custom-card {
-    background: #f6efd9 !important;
-    border-radius: 12px;
-    box-shadow: o 2px 8px rgba(0, 0, 0, 0.08);
-}
-.like-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 10px 0 10px;
-}
-
-.heart-icon {
-    font-size: 24px;
-    color: black;
-}
-
-.likes-text {
-    text-align: right;
-}
-
-.like-number {
-    font-weight: bold;
-    font-size: 18px;
-    margin: o;
-}
-
-.like-label {
-    font-size: 14px;
-    margin: 0;
-}
-
-ion-card-header {
-    text-align: left;
-    padding-left: 10px;
-}
-
-.card-header-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 10px;
-}
-
-.title-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 8px;
-}
-
-.artist-name {
-  font-size: 14px;
-  color: #333;
-  margin-top: 4px;
-}
-
-.like-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-}
-
-.likes-text {
-  text-align: right;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-ion-card-subtitle {
-  margin-top: 6px; // يخلي اسم الفنان ينزل شوي
-}
-
-.likes-column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start; // يخلي القلب يطلع فوق
-  margin-left: auto;
-  margin-top: -6px; // يرفع القلب شوي لفوق
-}
-
-.heart-icon {
-  font-size: 24px;
-  margin-bottom: 2px; // يبُعد القلب عن الرقم شوي
-}
-
-.like-number {
-  font-size: 16px;
-  font-weight: 500;
-  margin: 0;
-  color: #6d4c41;
-}
-
-.like-label {
-  font-size: 14px;
-  margin: 0;
-  color: #6d4c41;
-}
-
-.artist-name {
-  font-size: 14px;
-  color: #5e5e5e;
-  margin-top: 50px; // زيد الرقم لو ما بان
-  display: block;
-}
-
-ion-card-title {
-  color: #3e3e3e; // غيّريه حسب اللون المطلوب
-}
-
-.details-btn {
-  --background: #6d4c41; // لون الخلفية
-  --color: #fff8f0;         // لون النص
-  font-weight: bold;
-  border-radius: 8px;
-}
-
-.card-background {
-  background-color: #fefae0 !important; // لون عاجي يميل للأرضي
-  border-radius: 12px;
-}
